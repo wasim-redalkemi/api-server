@@ -11,7 +11,7 @@ app.use(cors({origin: '*'}));
 
 app.get(["/posts", "/categories"], (req, res) => {  
   // Request URL
-  var url = 'https://themoviesverse.co/wp-json/wp/v2'+req.url;
+  var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
   request(url, (error, response, body) => { 
     //console.log(response.headers['x-wp-totalpages']);
     if(error){
