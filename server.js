@@ -14,6 +14,10 @@ app.use(
   compression()
 );
 
+app.get("/", (req, res) =>{
+  res.redirect("/posts");
+});
+
 app.get(["/posts", "/categories"], (req, res) => {  
   // Request URL
   var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
