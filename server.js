@@ -1,13 +1,18 @@
 const express = require("express");
 const request = require('request');
-var cors = require('cors');
+const cors = require('cors');
+const compression = require('compression');
+
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 
 
 // use it before all route definitions
-app.use(cors({origin: '*'}));
+app.use(
+  cors({origin: '*'}),
+  compression()
+);
 
 app.get(["/posts", "/categories"], (req, res) => {  
   // Request URL
