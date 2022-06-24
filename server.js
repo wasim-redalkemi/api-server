@@ -19,8 +19,15 @@ app.get("/", (req, res) =>{
 });
 
 app.get(["/posts", "/categories"], (req, res) => {  
+
   // Request URL
-  var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
+  if(parseInt(req.query.site) == 1){
+    var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
+  }
+  else{
+    var url = 'https://hdmoviesflix.asia/wp-json/wp/v2'+req.url;
+  }
+  //console.log(url);
   request(url, (error, response, body) => { 
     //console.log(response.headers['x-wp-totalpages']);
     if(error){
