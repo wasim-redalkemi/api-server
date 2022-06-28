@@ -25,7 +25,7 @@ app.get(["/posts", "/categories"], (req, res) => {
     var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
   }
   else{
-    var url = 'https://hdmoviesflix.asia/wp-json/wp/v2'+req.url;
+    var url = 'https://hdmoviesflix.shop/wp-json/wp/v2'+req.url;
   }
   //console.log(url);
   request(url, (error, response, body) => { 
