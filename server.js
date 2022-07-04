@@ -11,10 +11,7 @@ const app = express();
 // use it before all route definitions
 app.use(
   cors({origin: '*'}),
-  compression(),
-  (req, res, next) => {
-    res.set('Cache-control', 'no-cache, no-store, max-age=0');  
-  }
+  compression()
 );
 
 app.get("/", (req, res) =>{
@@ -39,6 +36,9 @@ app.get(["/posts", "/categories"], (req, res) => {
     else{
       result = body;
       res.set('totalPages', response.headers['x-wp-totalpages']);
+
+      //disable cache
+      res.set('Cache-control', 'no-cache, no-store max-age=0');
     }
     res.json(JSON.parse(result));
   });
