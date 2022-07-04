@@ -11,7 +11,10 @@ const app = express();
 // use it before all route definitions
 app.use(
   cors({origin: '*'}),
-  compression()
+  compression(),
+  (req, res, next) => {
+    res.set('Cache-control', 'no-cache, no-store, max-age=0');  
+  }
 );
 
 app.get("/", (req, res) =>{
