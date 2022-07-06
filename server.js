@@ -22,7 +22,7 @@ app.get(["/posts", "/categories"], (req, res) => {
 
   // Request URL
   if(parseInt(req.query.site) == 1){
-    var url = 'https://themoviesflix.ac/wp-json/wp/v2'+req.url;
+    var url = 'https://themoviesflix.cx/wp-json/wp/v2'+req.url;
   }
   else{
     var url = 'https://hdmoviesflix.shop/wp-json/wp/v2'+req.url;
