@@ -49,8 +49,8 @@ app.get(["/posts", "/categories"], (req, res) => {
 app.get("/generate-sitemap", async (req, res) => {
 
   const urls = [
-    "https://themoviesflix.cx/wp-json/wp/v2/posts?order_by=modified&per_page=50",
-    "https://hdmoviesflix.shop/wp-json/wp/v2/posts?order_by=modified&per_page=50"
+    "https://themoviesflix.cx/wp-json/wp/v2/posts?order_by=id&order=desc&per_page=50",
+    "https://hdmoviesflix.shop/wp-json/wp/v2/posts?order_by=id&order=desc&per_page=50"
   ];
   const sitemap_url = "https://movies-king.herokuapp.com/download/";
 
