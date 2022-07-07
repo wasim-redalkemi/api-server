@@ -39,7 +39,7 @@ app.get(["/posts", "/categories"], (req, res) => {
       res.set('totalPages', response.headers['x-wp-totalpages']);
 
       //disable cache
-      res.set('Cache-control', 'no-cache, no-store max-age=0');
+      res.set('Cache-control', 'no-cache, no-store, max-age=0');
     }
     res.json(JSON.parse(result));
   });
