@@ -21,14 +21,14 @@ app.get("/", (req, res) =>{
 
 app.get(["/posts", "/categories"], (req, res) => {  
 
-  let timestamp = new Date().getTime();
+  var timestamp = new Date().getTime().toString();
 
   // Request URL
   if(parseInt(req.query.site) == 1){
-    var url = 'https://themoviesflix.cx/wp-json/wp/v2'+req.url+'cache=flushat_'+timestamp;
+    var url = 'https://themoviesflix.cx/wp-json/wp/v2'+req.url;
   }
   else{
-    var url = 'https://hdmoviesflix.shop/wp-json/wp/v2'+req.url+'cache=flushat_'+timestamp;
+    var url = 'https://hdmoviesflix.shop/wp-json/wp/v2'+req.url;
   }
   //console.log(url);
   request(url, (error, response, body) => { 
